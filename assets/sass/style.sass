@@ -1,0 +1,37 @@
+@import "partials/_fonts"
+@import "partials/_normalize"
+
+*, *::before, *::after
+	box-sizing: border-box
+
+html
+	font-family: 'Open Sans', sans-serif
+	font-size: 14px
+	font-weight: 400
+
+h1, h2, h3, h4, h5, h6, p, ul
+	padding: 0
+	margin: 0
+
+input, a
+	border: 0
+	outline: 0
+
+a
+	cursor: pointer
+	text-decoration: none
+
+.center-wrap
+	width: 100%
+	max-width: 1200px
+	margin: 0 auto
+	padding: 0 15px
+	position: relative
+
+// Snippets
+@import 'snippets/_alignment'
+@import 'snippets/_nav-burger'
+// Partials
+@import "partials/_header"
+@import "partials/_mn-scrn"
+

@@ -1,0 +1,38 @@
+
+//<div class="nav__burger"><span></span></div>
+.nav__bgr
+	display: none
+	width: 40px
+	height: 14px
+	position: relative
+	z-index: 9999
+	cursor: pointer
+	span
+		display: block
+		width: 100%
+		height: 4px
+		background-color:#000
+		@extend %transform-align-y
+		&::before, &::after
+			content: ''
+			position: absolute
+			width: 100%
+			height: 4px
+			background-color: #000
+			transition: .25s
+		&::before
+			transform: translateY(10px)
+		&::after
+			transform: translateY(-10px)
+
+.bgr--actv
+	display: flex
+	span
+		background: transparent
+		&::before, &::after
+			background-color: #fff
+		&::before
+			transform: rotate(45deg)	
+		&::after
+			transform: rotate(-45deg)
+

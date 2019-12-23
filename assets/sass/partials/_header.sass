@@ -1,0 +1,254 @@
+.header
+	border-top: 6px solid#888e99
+	position: absolute
+	top: 0
+	width: 100%
+	z-index: 3
+
+.header__top
+	padding: 30px 0
+	background-image: linear-gradient(to top, #e8e8e8 0%, #ffffff 100%)
+
+.header__top>.center-wrap
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+// call group
+.logo-grp
+	display: flex
+	align-items: center
+
+.logo-grp>img
+	width: 46px
+	height: 40px
+	margin-right: 14px
+
+.logo-grp__txt-nm
+	font-family: 'Raleway', sans-serif
+	font-weight: 800
+	font-size: 25px
+	text-transform: uppercase
+	color: #bcbcbc
+	&>span
+		color: #736676
+
+.logo-grp__txt-slgn
+	color: #9b9b9b
+	font-family: 'Open Sans', sans-serif
+	font-size: 14px
+	font-style: italic
+
+// call group
+.call-grp
+	display: flex
+	align-items: center
+
+.call-phn
+	display: flex
+	align-items: center
+	margin-right: 35px
+
+.call-phn>img
+	margin-right: 25px
+	margin-bottom: -4px
+
+.call-phn__now
+	font-family: 'Open Sans', sans-serif
+	font-size: 14px
+	font-weight: 700
+	line-height: 20px
+	text-transform: uppercase
+	color: #7d7987
+
+.call-phn__num
+	color: #424242
+	font-family: 'Lato', sans-serif
+	font-size: 22px
+	font-weight: 900
+	white-space: nowrap
+
+.btn
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 100%
+	height: 45px
+	border-radius: 25px
+	cursor: pointer
+	position: relative
+	overflow: hidden
+	&::after
+		content: ''
+		position: absolute
+		background: #fff
+		height: 155px
+		left: -75px
+		opacity: .5
+		top: -50px
+		transform: rotate(35deg)
+		transition: all .75s cubic-bezier(0.19, 1, 0.22, 1)
+		width: 50px
+	&:hover::after
+		left: 120%
+		transition: all .75s cubic-bezier(0.19, 1, 0.22, 1)
+	&>span
+		color: #ffffff
+		font-family: 'Open Sans', sans-serif
+		font-size: 15px
+		font-weight: 400
+
+.call-grp--btn
+	min-width: 202px
+	background-color: #a175aa
+
+.menu-mbl
+	display: none
+
+// header__bottom
+.header__bottom
+	background: rgba(255, 255, 255, .7)
+
+.nav-list
+	display: flex
+
+.nav-list>li
+	display: block
+	position: relative
+	padding: 23px 0 26px
+	& + li
+		margin-left: 40px
+		
+.nav-list-scnd
+	background-color: #68a4ec
+	position: absolute
+	left: 0
+	top: 100%
+	opacity: .75
+	display: none
+	padding: 20px 10px
+	&.active
+		display: block
+
+.nav-list-scnd>li
+	display: block
+	&>.nav__link
+		padding: 10px 15px
+
+.nav__link
+	display: block
+	padding-right: 16px
+	color: #000
+	font-family: 'Raleway', sans-serif
+	font-size: 15px
+	font-weight: 700
+	text-transform: uppercase
+	transition: all .25s
+	position: relative
+	&:hover
+		color: #ad70ba
+
+.nav__link>.fas
+	font-size: 10px
+	@extend %transform-align-y
+	right: 0
+	margin-top: -2px
+	transition: all .5s
+	transform-origin: 50% 35%
+
+.nav__link.active>.fas
+	transform: rotate(180deg)
+
+
+@media screen and (max-width: 1366px)
+	.header__top
+		padding: 15px 0
+
+	.nav-list>li
+		padding: 10px 0
+
+@media screen and (max-width: 996px)
+	.call-grp--dtp, .header__bottom
+		display: none
+
+	.nav__bgr
+		display: block
+
+	.menu-mbl
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(0, 0, 0, .85)
+		&.menu--actv
+			display: flex
+
+	.nav--mbl
+		margin-bottom: 30px
+
+	.nav-list--mbl
+		flex-direction: column
+
+	.nav-list--mbl>li + li
+		margin-left: 0
+
+	.nav__link--mbl
+		color: #fff
+
+	.call-grp--mbl
+		flex-direction: column
+
+	.call-phn--mbl
+		margin-bottom: 8px
+		margin-right: 0
+
+	.call-phn--mbl>img
+		margin-right: 15px
+
+	.call-phn-txt--mbl
+		color: #fff !important
+	
+	.menu-mbl .nav-list-scnd
+		position: static
+		background-color: rgba(104,164,236, .95)
+
+@media screen and (max-width: 768px)
+	.header
+		border-top-width: 3px
+
+	.header__top
+		padding: 8px 0
+
+	.logo-grp__txt-nm
+		font-size: 16px
+
+	.logo-grp__txt-slgn
+		font-size: 12px
+
+@media screen and (max-width: 480px)
+	.logo-grp > img
+		width: 33px
+		height: 30px
+		margin-right: 5px
+
+	.call-phn--mbl>img
+		margin-right: 8px
+
+	.nav__bgr
+		width: 30px
+		&>span, &>span::before, &>span::after
+			height: 3px
+		&>span::before
+			transform: translateY(7px)
+		&>span::after
+			transform: translateY(-7px)
+
+	.bgr--actv>span
+		&::before
+			transform: rotate(45deg)
+		&::after
+			transform: rotate(-45deg)
